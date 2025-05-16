@@ -88,7 +88,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">EvHDR-GS: Event-guided HDR Video Reconstruction with 3D Gaussian Splatting</h1>
+          <h1 class="title is-1 publication-title">EDyGS: Event Enhanced Dynamic 3D Radiance Fields from Blurry Monocular Video</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a>Zehao Chen</a><sup>1,2</sup>,</span>
@@ -121,7 +121,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://ojs.aaai.org/index.php/AAAI/article/view/32237"
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -259,13 +259,15 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            High Dynamic Range (HDR) video reconstruction seeks to accurately restore the extensive dynamic range present in real-world scenes and is widely employed in downstream applications. 
-            Existing methods typically operate on one or a small number of consecutive frames, which often leads to inconsistent brightness across the video due to their limited perspective on the video sequence. 
-            Moreover, supervised learning-based approaches are susceptible to data bias, result- ing in reduced effectiveness when confronted with test inputs exhibiting a domain gap relative to the training data. 
-            To address these limitations, we present an event-guided HDR video reconstruction method through building 3D Gaussian Splatting (3DGS), to ensure consistent brightness imposed by 3D consistency. 
-            We introduce HDR 3D Gaussians capable of simultaneously representing HDR and low-dynamic-range (LDR) colors. 
-            Furthermore, we incorporate a learnable HDR-to-LDR transformation optimized by input event streams and LDR frames to eliminate the data bias. 
-            Experimental results on both synthetic and real-world datasets demonstrate that the proposed method achieves state-of-the-art performance.
+            The task of generating novel views in dynamic scenes plays a critical role in the 3D vision domain. 
+            Neural Radiance Fields (NeRFs) and 3D Gaussian Splatting (3DGS) have shown great promise in this domain but struggle with motion blur, which often arises in real-world scenarios due to camera or object motion. 
+            Existing methods address camera motion blur but fall short in dynamic scenes, where the coupling of camera and object motion complicates multi-view consistency and temporal coherence. 
+            In this work, we propose EDyGS, a model designed to reconstruct sharp novel views from event streams and monocular videos of dynamic scenes with motion blur. 
+            Our approach introduces a motion-mask 3D Gaussian model that assigns each Gaussian an additional attribute to distinguish between static and dynamic regions. 
+            By leveraging this motion mask field, we separate and optimize the static and dynamic regions independently. 
+            A progressive learning strategy is adopted, where static regions are reconstructed by jointly optimizing camera poses and learnable 3D Gaussians, while dynamic regions are modeled using an implicit deformation field alongside learnable 3D Gaussians. 
+            We conduct both quantitative and qualitative experiments on synthetic and real-world data.  
+            Experimental results demonstrate that EDyGS effectively handles blurry inputs in dynamic scenes.
           </p>
         </div>
       </div>
@@ -283,11 +285,12 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{chen2025evhdr,
-      title     = {EvHDR-GS: Event-guided HDR Video Reconstruction with 3D Gaussian Splatting},
-      author    = {Chen, Zehao and Lu, Zhan and Ma, De and Tang, Huajin and Jiang, Xudong and Zheng, Qian and Pan, Gang},
-      booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
-      year      = {2025}
+    <pre><code>@inproceedings{lu2025EDyGS,
+      title={EDyGS: Event Enhanced Dynamic 3D Radiance Fields from Blurry Monocular Video},
+      author={Mengxu Lu, Zehao Chen, Yan Liu, De Ma, Huajin Tang, Qian Zheng, and Gang Pan},
+      booktitle={Proceedings of the International Joint Conference on Artificial Intelligence},
+      year={2025}
+    }
 }</code></pre>
   </div>
 </section>
